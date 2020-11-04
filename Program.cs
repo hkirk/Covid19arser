@@ -56,8 +56,8 @@ namespace Covid19Data
         var age = random.Next(100);
         var ssn = $"{getDate()}{getMonth()}{getYear(age)}-{getControl()}";
 
-        builder.Append($"new Citizen({i}, \"{first}\", \"{last}\", \"{ssn}\", {age}, \"{gender}\"),\n");
-        builderCSV.Append($"{i},{first},{last},{ssn},{age},{gender}),\n");
+        builder.Append($"new Citizen({i + 1}, \"{first}\", \"{last}\", \"{ssn}\", {age}, \"{gender}\"),\n");
+        builderCSV.Append($"{i + 1},{first},{last},{ssn},{age},{gender}),\n");
       }
 
       File.WriteAllText("./output/Citizen.output", builder.ToString());
